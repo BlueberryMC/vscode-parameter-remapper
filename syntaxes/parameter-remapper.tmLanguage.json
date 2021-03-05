@@ -1,0 +1,63 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Parameter Remapper",
+  "patterns": [
+    {
+      "include": "#comment"
+    },
+    {
+      "include": "#class-name"
+    },
+    {
+      "include": "#method-sig"
+    },
+    {
+      "include": "#method"
+    },
+    {
+      "include": "#arrow-side"
+    },
+    {
+      "include": "#arrow"
+    }
+  ],
+  "repository": {
+    "class-name": {
+      "name": "entity.name.type.class-name",
+      "match": "^[a-zA-Z_$].+?\\s"
+    },
+    "method": {
+      "patterns": [
+        {
+          "name": "entity.name.function",
+          "match": ".* (?=[(])"
+        }
+      ]
+    },
+    "method-sig": {
+      "patterns": [
+        {
+          "name": "keyword.other",
+          "match": "\\(.*\\)(.*?)"
+        },
+        {
+          "name": "entity.name.type.sigtype",
+          "match": "\\b([ZBCSIJFDV]|[\\[L].*?)\\s+\\b"
+        }
+      ] 
+    },
+    "arrow-side": {
+      "name": "keyword.control.arrow-right",
+      "match": "[a-zA-Z_$0-9]+"
+    },
+    "arrow": {
+      "name": "keyword.other.arrow",
+      "match": "->"
+    },
+    "comment": {
+      "name": "comment.line",
+      "match": "#.*"
+    }
+  },
+  "scopeName": "source.pr"
+}

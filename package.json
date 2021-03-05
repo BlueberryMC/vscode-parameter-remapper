@@ -1,0 +1,34 @@
+{
+    "name": "vscode-parameter-remapper",
+    "displayName": "Parameter Remapper (.pr) File Support",
+    "description": "Blueberry .pr (Parameter Remapper) file support for vscode",
+    "author": {
+        "name": "acrylic-style",
+        "url": "https://github.com/acrylic-style"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/acrylic-style"
+    },
+    "publisher": "acrylic-style",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.54.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "parameter-remapper",
+            "aliases": ["Parameter Remapper", "parameter-remapper"],
+            "extensions": [".pr"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "parameter-remapper",
+            "scopeName": "source.pr",
+            "path": "./syntaxes/parameter-remapper.tmLanguage.json"
+        }]
+    }
+}
